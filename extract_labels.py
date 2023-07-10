@@ -1,5 +1,6 @@
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
 
 
 def extract_labels(file_path: Path) -> pd.DataFrame:
