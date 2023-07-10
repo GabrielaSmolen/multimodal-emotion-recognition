@@ -5,8 +5,11 @@ from pathlib import Path
 def extract_labels(file_path: Path) -> pd.DataFrame:
     """
     Extract labels from text files.
-    :param file_path: Path to txt files
-    :return: extracted labels including start time, end time, wav file name, emotion, val, act, dom
+    Args:
+        file_path (Path): Path to txt files
+    Returns:
+        extracted labels (pd.DataFrame): Dataframe with extracted labels including start time, end time, wav file name,
+        emotion and average dimensional evaluation
     """
     extracted_labels = pd.DataFrame(columns=["start_time", "end_time", "wav_file", "emotion", "val", "act", "dom"])
     with open(file_path) as file:
