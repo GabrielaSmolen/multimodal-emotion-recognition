@@ -21,14 +21,19 @@ def extract_labels(file_path: Path) -> pd.DataFrame:
                 val, act, dom = val_act_dom[1:-1].split(',')
                 extracted_labels.loc[len(extracted_labels)] = [start_time.strip(), end_time.strip(), wav_file_name,
                                                                emotion, float(val), float(act), float(dom)]
-                
+
     return extracted_labels
 
 
-if __name__ == '__main__':
+def main():
     all_labels = pd.DataFrame(columns=["start_time", "end_time", "wav_file", "emotion", "val", "act", "dom"])
     for i in range(1, 6):
-        paths = Path(f"data/IEMOCAP_full_release/Session{i}/dialog/EmoEvaluation/").glob("*.txt")
+        paths = Path(f"C:/Users/Gabi/PycharmProjects/multimodal-emotion-recognition/data/IEMOCAP_full_release/Session{i}/dialog/EmoEvaluation/").glob("*.txt")
         for path in list(paths):
             labels = extract_labels(path)
             all_labels = pd.concat([all_labels, labels], ignore_index=True)
+    return all_labels
+
+
+if __name__ == '__main__':
+    main()
