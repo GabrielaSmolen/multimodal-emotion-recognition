@@ -37,7 +37,7 @@ def feature_extraction(audio_path):
 
 if __name__ == "__main__":
     labels = extract_labels()
-    wav_files_path = "C:/Users/Gabi/PycharmProjects/multimodal-emotion-recognition/audio_preprocessing/new_wav_files"
+    wav_files_path = "/audio_preprocessing/new_wav_files"
 
     means = [f"MFCC mean {x}" for x in range(1, 14)]
     deltas = ["MFCC delta " + str(x) for x in range(1, 14)]
@@ -59,4 +59,4 @@ if __name__ == "__main__":
         df2 = pd.DataFrame([feats], columns=columns)
         df = pd.concat([df, df2])
 
-    df.to_csv(join("C:/Users/Gabi/PycharmProjects/multimodal-emotion-recognition", "features.csv"), index=False)
+    df.to_csv(join("multimodal-emotion-recognition", "features.csv"), index=False)
