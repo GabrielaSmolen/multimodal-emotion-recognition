@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from pydub import AudioSegment
 
-from extract_labels import main as extract_labels
+from audio_preprocessing.extract_labels import main as extract_labels
 
 
 def split_wav_files(output_path):
@@ -13,7 +13,7 @@ def split_wav_files(output_path):
     and exports the extracted segments to new WAV files in a designated directory.
     """
     for i in range(1, 6):
-        paths = Path(f"data/IEMOCAP_full_release/Session{i}/dialog/wav/").glob("*.wav")
+        paths = Path(f"C:/Users/Gabi/PycharmProjects/multimodal-emotion-recognition/data/IEMOCAP_full_release/Session{i}/dialog/wav/").glob("*.wav")
         for path in list(paths):
             labels = extract_labels()
             path = str(path)
