@@ -15,7 +15,7 @@ from sklearn.preprocessing import MinMaxScaler
 import keras
 from keras.callbacks import EarlyStopping
 
-df = pd.read_csv("C:/Users/Gabi/PycharmProjects/multimodal-emotion-recognition/augmented_data.csv")
+df = pd.read_csv("/augmented_data.csv")
 
 # shuffle the dataset! 
 df = df.sample(frac=1).reset_index(drop=True)

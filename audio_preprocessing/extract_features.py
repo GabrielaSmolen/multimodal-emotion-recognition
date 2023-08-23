@@ -5,7 +5,7 @@ from os.path import isfile, join
 import pandas as pd
 import numpy as np
 import tqdm
-from audio_preprocessing.extract_labels import main as extract_labels
+from extract_labels import main as extract_labels
 
 
 def feature_extraction(audio_path):

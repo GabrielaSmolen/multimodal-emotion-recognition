@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from pydub import AudioSegment
 
-from audio_preprocessing.extract_labels import main as extract_labels
+from extract_labels import main as extract_labels
 
 
 def split_wav_files(output_path):
