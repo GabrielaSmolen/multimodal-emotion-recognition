@@ -59,4 +59,12 @@ if __name__ == "__main__":
         df2 = pd.DataFrame([feats], columns=columns)
         df = pd.concat([df, df2])
 
+    df = df.loc[df["Label"] != "xxx"]
+    df = df.loc[df["Label"] != "sur"]
+    df = df.loc[df["Label"] != "oth"]
+    df = df.loc[df["Label"] != "fea"]
+    df = df.loc[df["Label"] != "dis"]
+
+    class_counts = df['Label'].value_counts()
+
     df.to_csv(join("C:/Users/Gabi/PycharmProjects/multimodal-emotion-recognition", "features.csv"), index=False)

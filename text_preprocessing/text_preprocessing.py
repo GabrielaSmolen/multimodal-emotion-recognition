@@ -48,6 +48,6 @@ if __name__ == '__main__':
 
     result = result.loc[~result["emotion"].isin(emotions_to_exclude)]
     result = result.dropna(subset=["emotion"])
-    result = result.drop(["start_time", "end_time", "wav_file", "val", "act", "dom", "words"], axis=1)
+    result = result.drop(["start_time", "end_time", "val", "act", "dom", "words"], axis=1)
 
     result.to_csv(join("C:/Users/Gabi/PycharmProjects/multimodal-emotion-recognition", "text_data.csv"), index=False)
